@@ -76,8 +76,8 @@ class MssqlServer(object):
 
 	def connect(self):
 		try:
-			uid="us_shi_jy"
-			pwd="qbus+0901qpalz,"
+			uid=""
+			pwd=""
 			print self._servername,self._database,self._port
 			self._conn= pymssql.connect(server=self._servername,database=self._database,port=self._port,user=uid,password=pwd,login_timeout=self._login_timeout,charset=self._charset)
 		except Exception,e:

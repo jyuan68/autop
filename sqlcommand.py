@@ -36,6 +36,35 @@ def parse_param_config(strconfig):
         variable_name=''
     return vardict
 
+
+def substutite_sql_string(source,**kwds):
+    """
+    example:
+        select '$serviceobj.servername','$serviceobj.port',* from $dbname.dbo.tables(nolock)
+    """
+    length=len(source)
+    def next_token(start):
+        while start<length:
+            c=source[i]
+            if not ("A"<=c<="Z" or "a"<=c<="z" or "0"<=c<="9"):
+                if c==".":
+
+
+        else:
+
+    def get_variable_value_by_name():
+        pass
+    data_list=[]
+    i=0
+    while i<length:
+        c=source[i]
+        if c=="$":
+            i,var_identity=next_token(i+1)
+            data_list.append("")
+            data_list.append(get_variable_value_by_name(var_identity))
+        i=i+1
+    return ''.join(data_list)
+
 class Command(object):
     def __init__(self):
         pass
